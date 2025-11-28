@@ -32,7 +32,7 @@ public class UserDaoHibernateImpl implements UserDao {
                         """;
                 session.createNativeQuery(sql).executeUpdate();
                 transaction.commit();
-                logger.info("Таблица userсоздана");
+                logger.info("Таблица user создана");
             } catch (Exception e) {
                 transaction.rollback();
                 throw e;
