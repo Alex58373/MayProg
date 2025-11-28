@@ -32,7 +32,7 @@ public class UserDaoHibernateImpl implements UserDao {
                         """;
                 session.createNativeQuery(sql).executeUpdate();
                 transaction.commit();
-                logger.info("Таблица users создана");
+                logger.info("Таблица userсоздана");
             } catch (Exception e) {
                 transaction.rollback();
                 throw e;
@@ -50,7 +50,7 @@ public class UserDaoHibernateImpl implements UserDao {
                 String sql = "DROP TABLE IF EXISTS user";
                 session.createNativeQuery(sql).executeUpdate();
                 transaction.commit();
-                logger.info("Таблица users удалена");
+                logger.info("Таблица user удалена");
             } catch (Exception e) {
                 transaction.rollback();
                 throw e;
@@ -121,7 +121,7 @@ public class UserDaoHibernateImpl implements UserDao {
             String sql = "TRUNCATE TABLE user";
             session.createNativeQuery(sql).executeUpdate();
             session.getTransaction().commit();
-            logger.info("Таблица users очищена");
+            logger.info("Таблица user очищена");
         } catch (Exception e) {
             logger.error("Ошибка при очистке таблицы: " + e.getMessage());
         }
